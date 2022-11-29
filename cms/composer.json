@@ -1,0 +1,38 @@
+{
+    "require": {
+        "johnpbloch/wordpress-core-installer": "^2.0",
+        "johnpbloch/wordpress-core": "^6.1",
+        "wpackagist-plugin/woocommerce": "^7.1",
+        "wpackagist-plugin/wordpress-importer": "^0.8.0",
+        "wpackagist-plugin/woocommerce-gateway-stripe": "^7.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true
+        }
+    },
+    "repositories": {
+        "wppackagist": {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "wordpress/wp-content/plugins/{$name}": [
+                "type:wordpress-plugin"
+            ],
+            "wordpress/wp-content/themes/{$name}": [
+                "type:wordpress-theme"
+            ],
+            "wordpress/wp-content/mu-plugins/{$name}": [
+                "type:wordpress-muplugin"
+            ]
+        }
+    },
+    "preserve-paths": [
+        "wordpress/robots.txt",
+        "wordpress/wp-config.php"
+    ]
+}

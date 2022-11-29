@@ -1,0 +1,20 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    // "ghcr.io/devcontainers-extras/features/shell-utils:latest": {}
+  },
+  "forwardPorts":[8000, 3000],
+  "portsAttributes": {
+    "8000": {
+      "label": "CMS Application Port",
+      "onAutoForward": "silent"
+    },
+    "3000": {
+      "label": "Storefront Port",
+      "onAutoForward": "silent"
+    }
+  },
+  "updateContentCommand": "make all -j2",
+  "postAttachCommand": ".scripts/makeCmsPortPublic.sh",
+  "shutdownAction": "stopCompose"
+}

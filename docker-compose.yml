@@ -1,0 +1,62 @@
+version: '3.9'
+
+services:
+  storefront:
+    image: storefront
+    pull_policy: never
+    build:
+      context: ./storefront
+      # see exportUserAndGroupIds.sh
+      args:
+        - USER_ID
+        - GROUP_ID
+    ports:
+      - 3000:3000
+    env_file: .env
+    volumes:
+      - ./storefront:/app
+    extra_hosts:
+      - "cms.localhost:host-gateway"
+
+  cms:
+    image: cms
+    pull_policy: never
+    build:
+      context: ./cms
+      # see exportUserAndGroupIds.sh
+      args:
+        - USER_ID
+        - GROUP_ID
+    restart: always
+    ports:
+      - 8000:80
+    secrets:
+      - cms_db_password
+    env_file: .env
+    environment:
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', getenv('WORDPRESS_URL'));
+        define('WP_SITEURL', getenv('WORDPRESS_URL'));
+        define('WP_AUTO_UPDATE_CORE', true);
+        define('DISALLOW_FILE_MODS', true);
+        define('DISALLOW_FILE_EDIT', true);
+        define('SHOP_IS_ON_FRONT', true);
+    volumes:
+      - ./cms/wordpress:/var/www/html
+      - ./cms/custom.ini:/usr/local/etc/php/conf.d/custom.ini:ro
+
+  db:
+    image: mariadb
+    restart: always
+    env_file: .env
+    secrets:
+      - cms_db_password
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  db:
+
+secrets:
+  cms_db_password:
+    file: .secrets/cms_db_password
