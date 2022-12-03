@@ -5,9 +5,9 @@ import { Order } from "./types/wooCommerceTypes";
 // NOTE: must execute these API calls server-side because env vars
 // only available there and it is more secure
 const api = new WooCommerceRestApi({
-  url: process.env.WORDPRESS_URL!,
-  consumerKey: process.env.WOOCOMMERCE_API_KEY!,
-  consumerSecret: process.env.WOOCOMMERCE_API_SECRET!,
+  url: 'https://on1zuma-miniature-train-wqr9465747v2v5qp-8000.preview.app.github.dev',
+  consumerKey: 'ck_1197383bf65c260e88a6bde7ea5ccf3b70bbf7eb',
+  consumerSecret: 'cs_811f9bb74541847ab13cd90c63279d8dca752392',
   version: "wc/v3",
 });
 

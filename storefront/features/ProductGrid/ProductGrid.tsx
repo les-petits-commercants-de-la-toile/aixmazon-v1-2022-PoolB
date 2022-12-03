@@ -11,9 +11,7 @@ const ProductGrid = (props: Props) => {
 
   return (
     <Grid>
-      {products.map((product) => {
-        return <ProductCard product={product} key={product.id} />;
-      })}
+
     </Grid>
   );
 };
