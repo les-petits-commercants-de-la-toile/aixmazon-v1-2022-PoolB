@@ -9,6 +9,17 @@ interface Props {
   lineItems: LineItem[];
 }
 
+function calculateCartTotal(lineItems: LineItem[]) {
+  if (!lineItems.length) return "0.00€";
+
+  const totalsArray = lineItems.map((lineItem) => {
+    return parseFloat(lineItem.price!) * 100 * lineItem.quantity;
+  });
+  const total = totalsArray.reduce((prev, next) => prev + next);
+  const formattedTotal = `${(total / 100).toFixed(2)}€`;
+  return formattedTotal;
+}
+
 const Cart = (props: Props) => {
   const { lineItems } = props;
   const router = useRouter();
@@ -21,7 +32,8 @@ const Cart = (props: Props) => {
           return <CartItem lineItem={lineItem} key={lineItem.product_id} />;
         })}
         <CartSummary lineItems={lineItems} />
-        <CTA onClickFunction={() => router.push("/checkout")}>PAYER</CTA>
+        <CTA onClickFunction={() => router.push("/checkout")}>PAYER {calculateCartTotal(props.lineItems)}
+        </CTA>
       </Fragment>
     );
   };
