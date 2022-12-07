@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Header = () => {
   return (
     <Wrapper>
-      <Image src="/aixmazon.png" width={189} height={60} alt="Aixmazone" />
+      <Image src="/aixmazon.png" alt="Aixmazone" width={189} height={60} />
       <Navbar />
     </Wrapper>
   );
