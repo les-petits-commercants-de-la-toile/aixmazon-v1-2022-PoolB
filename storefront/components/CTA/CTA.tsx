@@ -24,12 +24,16 @@ export default CTA;
 
 const StyledButton = styled.button`
   width: 100%;
+  border-radius: 2rem;
   padding: 16px 20px;
   border: none;
-  background: ${(props) => props.theme.colors.secondary};
+  background: ${(props) => props.theme.colors.buttonPrimary};
   color: ${(props) => props.theme.colors.darkText};
   &:disabled {
     opacity: 0.4;
     background: lightgrey;
+  }
+  &:hover {
+    background-color: ${(props) => props.theme.colors.buttonSecondary};
   }
 `;

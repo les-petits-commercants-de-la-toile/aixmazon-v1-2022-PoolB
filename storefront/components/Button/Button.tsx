@@ -6,6 +6,7 @@ interface Props {
   className?: string;
   onClickFunction?: React.MouseEventHandler<HTMLButtonElement>;
   isClicked?: boolean;
+  isHover?: boolean;
 }
 
 const Button = (props: Props) => {
@@ -14,6 +15,7 @@ const Button = (props: Props) => {
       className={props.className}
       onClick={props.onClickFunction}
       isClicked={props.isClicked}
+      isHover={props.isHover}
     >
       {props.children}
     </StyledButton>
@@ -24,11 +26,12 @@ export default Button;
 
 const StyledButton = styled.button<Props>`
   border: none;
-  background-color: ${(props) =>
-    props.isClicked
-      ? props.theme.colors.secondary
-      : props.theme.colors.primary};
-  color: ${(props) => props.theme.colors.lightText};
+  border-radius: 2rem;
+  background-color: ${(props) => props.theme.colors.buttonPrimary};
+  color: ${(props) => props.theme.colors.darkText};
   transition: background-color 0.2s ease;
   padding: 10px 20px;
+  &:hover {
+    background-color: ${(props) => props.theme.colors.buttonSecondary};
+  }
 `;
