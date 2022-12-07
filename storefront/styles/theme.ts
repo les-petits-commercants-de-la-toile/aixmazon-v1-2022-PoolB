@@ -10,4 +10,8 @@ export const theme = {
     heading: "Raleway",
     body: "Cabin",
   },
+  background : {
+    amazon: "linear-gradient( #fde7ae,#f3c451)",
+    amazonclicked: "linear-gradient( #f3c451,#fde7ae)",
+  }
 };
