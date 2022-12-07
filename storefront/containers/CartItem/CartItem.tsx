@@ -40,7 +40,7 @@ const CartItem = (props: Props) => {
 
   return (
     <Wrapper>
-      <div onClick={remove}>X</div>
+      <div className="DeleteCartItem" onClick={remove}>X</div>
       <div>{props.lineItem.name}</div>
       <CartQty
         quantity={props.lineItem.quantity}

@@ -23,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Raleway'
   }
 
+  .NavHeading__StyledH4-sc-127f2tf-0:hover, button:hover, .DeleteCartItem:hover{
+    cursor: pointer;
+  }
+
 `;
 
 export default GlobalStyle;
