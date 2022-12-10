@@ -21,8 +21,23 @@ const ProductGrid = (props: Props) => {
 export default ProductGrid;
 
 const Grid = styled.div`
-  width: 100%;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+
   display: grid;
-  grid-template-columns: 2fr;
-  gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+  gap: 18px;
+  @media (max-width:1132px) {
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+
+  }
+
+  @media (max-width:973px) {
+    width: 70vw;
+    display: block;
+
+  }
 `;
