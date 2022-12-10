@@ -32,4 +32,5 @@ const StyledButton = styled.button`
     opacity: 0.4;
     background: lightgrey;
   }
+  background:linear-gradient( #fde7ae,#f3c451);
 `;

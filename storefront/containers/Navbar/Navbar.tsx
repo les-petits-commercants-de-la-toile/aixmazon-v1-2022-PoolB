@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { NavHeading } from "../../components";
+import { Button, NavHeading } from "../../components";
 
 const Navbar = () => {
   return (
     <Wrapper>
-      <NavHeading link="/">Produits</NavHeading>
-      <NavHeading link="/cart">Panier</NavHeading>
-      <NavHeading link="/checkout">Paiement</NavHeading>
+      <NavHeading link="/"><Button>Produits</Button></NavHeading>
+      <NavHeading link="/cart"><Button>Panier</Button></NavHeading>
+      <NavHeading link="/checkout"><Button>Paiement</Button></NavHeading>
     </Wrapper>
   );
 };
