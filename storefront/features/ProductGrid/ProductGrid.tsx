@@ -36,8 +36,8 @@ const Grid = styled.div`
   }
 
   @media (max-width:973px) {
-    grid-template-columns: 1fr;
-    width: 70%;
+    width: 70vw;
+    display: block;
 
   }
 `;
