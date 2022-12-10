@@ -5,6 +5,8 @@ export const theme = {
     secondary: "#AFFAD6",
     lightText: "#FFFFFF",
     darkText: "#000000",
+    buttonPrimary: "#ffd814",
+    buttonSecondary: "#f7ca00",
   },
   font: {
     heading: "Raleway",
