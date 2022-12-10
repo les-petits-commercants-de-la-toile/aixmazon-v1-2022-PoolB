@@ -22,11 +22,6 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway'
   }
-
-  .NavHeading__StyledH4-sc-127f2tf-0:hover, button:hover, .DeleteCartItem:hover{
-    cursor: pointer;
-  }
-
 `;
 
 export default GlobalStyle;

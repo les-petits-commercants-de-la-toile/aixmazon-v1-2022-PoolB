@@ -30,8 +30,9 @@ const StyledButton = styled.button<Props>`
       : props.theme.colors.primary};
   color: ${(props) => props.theme.colors.darkText};
   transition: background-color 0.2s ease;
-  padding: 10px 20px;
   cursor: pointer;
+    
+  padding: 10px 20px;
   border-radius: 5px;
   border:1px solid #b79033;
   background: ${(props) =>
