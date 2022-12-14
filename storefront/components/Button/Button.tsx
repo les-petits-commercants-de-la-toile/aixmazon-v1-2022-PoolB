@@ -31,4 +31,8 @@ const StyledButton = styled.button<Props>`
   color: ${(props) => props.theme.colors.lightText};
   transition: background-color 0.2s ease;
   padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: 1px solid BLUE;
+  background-color: BLUE;
 `;

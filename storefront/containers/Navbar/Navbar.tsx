@@ -14,9 +14,16 @@ const Navbar = () => {
 export default Navbar;
 
 const Wrapper = styled.div`
-  width: 100%;
+display: flex;
+justify-content: end;  
+align-items: center;
+gap: 12px;
+cursor: pointer;
+
+@media (max-width:973px) {
   display: flex;
+  justify-content: center;  
   align-items: center;
-  justify-content: center;
   gap: 12px;
+}
 `;

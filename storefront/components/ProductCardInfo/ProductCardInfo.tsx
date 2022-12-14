@@ -38,6 +38,7 @@ export default ProductCardInfo;
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 16px;
   padding-top: 5%;
@@ -46,10 +47,12 @@ const Wrapper = styled.div`
 
 const SpanContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 12px;
   span {
     display: flex;
     align-items: center;
+    
   }
 `;
